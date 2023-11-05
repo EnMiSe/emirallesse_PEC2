@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root">
+    <!-- Contenidor per a la llista de to-dos -->
+    <div id="todo-list">
+      <!-- Aquí es renderitzaran els to-dos -->
+    </div>
 
-    <title>Todo App</title>
+    <!-- Formulari per afegir un nou to-do -->
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Add a new todo..." />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <script src="models/todo.model.js"></script>
-    <script src="services/todo.service.js"></script>
-    <script src="controllers/todo.controller.js"></script>
-    <script src="views/todo.views.js"></script>
-    <script src="app.js"></script>
-  </body>
+  <!-- Incloure els scripts JavaScript -->
+  <script src="models/todo.model.js"></script>
+  <script src="services/todo.service.js"></script>
+  <script src="controllers/todo.controller.js"></script>
+  <script src="views/todo.views.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
+

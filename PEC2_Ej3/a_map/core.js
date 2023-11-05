@@ -1,18 +1,22 @@
 function multiplyBy10(array) {
-  // your code here
+  return array.map(element => element * 10);
 }
+
 
 function shiftRight(array) {
-  // your code here
+  return [array[array.length - 1]].concat(array.slice(0, array.length - 1));
 }
+
 
 function onlyVowels(array) {
-  // your code here
+  return array.map(word => word.replace(/[^aeiouAEIOU]/g, ''));
 }
 
+
 function doubleMatrix(array) {
-  // your code here
+  return array.map(subArray => subArray.map(number => number * 2));
 }
+
 
 module.exports = {
   multiplyBy10,

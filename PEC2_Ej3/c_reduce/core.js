@@ -1,17 +1,20 @@
 function sum(array) {
-  // your code here
+  return array.reduce((acc, val) => acc + val, 0);
 }
 
 function productAll(array) {
-  // your code here
+  return array.reduce((acc, row) => acc * row.reduce((rowAcc, num) => rowAcc * num, 1), 1);
 }
 
 function objectify(array) {
-  // your code here
+  return array.reduce((obj, item) => {
+    obj[item[0]] = item[1];
+    return obj;
+  }, {});
 }
 
 function luckyNumbers(array) {
-  // your code here
+  return `Your lucky numbers are: ${array.slice(0, -1).join(', ')}, and ${array[array.length - 1]}`;
 }
 
 module.exports = {
@@ -20,3 +23,4 @@ module.exports = {
   objectify,
   luckyNumbers
 };
+

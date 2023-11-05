@@ -1,31 +1,32 @@
-// Check to see if all elements in an array
-// are even numbers.
-
 function allEven(input) {
-  return input;
+  return input.every(num => num % 2 === 0);
 }
-
-// Check to see if all elements in an array
-// are of the same type.
 
 function allSameType(input) {
-  return input;
+  return input.every((elem, _, array) => typeof elem === typeof array[0]);
 }
-
-// Check to see if every element in the matrix is
-// an array and that every element in the array is
-// greater than 0.
 
 function positiveMatrix(input) {
-  return input;
+  return input.every(row => Array.isArray(row) && row.every(num => num > 0));
 }
-
-// Check that all items in an array are strings
-// and that they all only contain the same vowels.
 
 function allSameVowels(input) {
-  return input;
+  const extractVowels = str => {
+    const vowels = 'aeiou';
+    let uniqueVowels = '';
+
+    for (let i = 0; i < str.length; i++) {
+      let char = str[i].toLowerCase();
+      if (vowels.includes(char) && !uniqueVowels.includes(char)) {
+        uniqueVowels += char;
+      }
+    }
+    return uniqueVowels;
+  };
+  const referenceVowels = extractVowels(input[0]);
+  return input.every(str => extractVowels(str) === referenceVowels);
 }
+
 
 module.exports = {
   allEven,
@@ -33,3 +34,4 @@ module.exports = {
   positiveMatrix,
   allSameVowels
 };
+

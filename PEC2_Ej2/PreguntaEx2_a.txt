@@ -1,0 +1,10 @@
+En el context de JavaScript, especialment en les classes i funcions que no són arrow functions, el valor de this és determinat per com es crida una funció, no on es declara. A la primera línia de codi que intenta passar this.service.addTodo directament com un callback, this no està correctament vinculat. Això significa que quan addTodo sigui cridat des dins de view, no sabrà què és this perquè no es crida en el context de l'objecte TodoController sinó més aviat en el context d'on bindAddTodo és cridat (probablement en alguna gestió d'event en view).
+
+Quan s'utilitza this.handleAddTodo, que és una arrow function, manté el context de this del lloc on la funció va ser definida, que seria l'objecte TodoController gràcies a que les arrow functions no tenen el seu propi this sinó que capturen el this del context de definició (en aquest cas, la instància de TodoController). Això assegura que quan handleAddTodo sigui cridat, pugui referenciar correctament this.service dins de la seva execució.
+
+Al codi proporcionat, totes les funcions manejadores com handleAddTodo es defineixen com arrow functions, de manera que mantindran el context correcte de this quan es passin com a callbacks i siguin cridades des d'altres llocs, assegurant que this es refereixi a l'objecte TodoController i no sigui undefined.
+
+Si volguessis passar this.service.addTodo directament, necessitaries assegurar que this està correctament vinculat, la qual cosa podríes fer utilitzant Function.prototype.bind per crear una nova funció amb this vinculat correctament:
+
+this.view.bindAddTodo(this.service.addTodo.bind(this.service));
+Aquí, bind es crida en this.service.addTodo, creant una nova funció amb this permanentment vinculat a l'objecte service, assegurant que quan addTodo sigui cridat, tingui el context correcte per accedir a les seves pròpies variables i funcions.
