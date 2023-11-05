@@ -1,3 +1,5 @@
+REPOSITORY LINK: https://github.com/EnMiSe/emirallesse_PEC2
+
 Salutaciones Sergio,
 
 Dado el volumen de tareas de las asignaturas de este semestre y junto con mi trabajo, no he podido dedicar todo el tiempo que me hubiera gustado en realizar esta PAC. Te comunico que te encontrarás apartados incompletos o hechos con prisa y por eso te pido disculpas. Se me han acumulado varias entregas en poco tiempo y no he podido llegar a todas. 

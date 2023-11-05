@@ -20,7 +20,7 @@ const users = [
     { name: 'Ana', rol: 'Boss' }
 ];
 
-// Hem afegit una funció anomenada 'findUser' que serà async.
+// Agregada una funció anomenada 'findUser' que serà async.
 const findUser = async (users, key, value, message) => {
     console.log(message);
     try {
@@ -32,13 +32,13 @@ const findUser = async (users, key, value, message) => {
     }
 };
 
-// Ara, cridem la nostra nova funció 'findUser' amb els paràmetres desitjats.
+// Ara, es crida la nova funció 'findUser' amb els paràmetres desitjats.
 findUser(users, 'name', 'Carlos', 'findOne success');
 findUser(users, 'name', 'Fermin', 'findOne error');
 
 /*
 Canvis realitzats:
-- Hem eliminat les crides originals a `findOne` amb `.then()` i `.catch()` ja que ara farem servir `async/await`.
+- Eliminades les crides originals a `findOne` amb `.then()` i `.catch()` ja que ara farem servir `async/await`.
 - Hem creat una nova funció `async` anomenada `findUser` que crida `findOne` i gestiona els resultats amb `await`. Si `findOne` resol amb èxit, obtenim l'usuari. Si es rebutja, gestionem l'error amb un bloc `catch`.
 - Hem cridat la funció `findUser` amb els paràmetres desitjats en lloc de les crides originals a `findOne`.
 
